@@ -1,9 +1,10 @@
+import 'package:crucial_conversation_test/data/answer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './data/question.dart';
 
-const String _NOPE = "NO";
-const String _YUP = "YES";
+const String _NOPE = "False";
+const String _YUP = "True";
 
 class QuestionView extends StatefulWidget {
   final Question question;
@@ -23,7 +24,7 @@ class QuestionView extends StatefulWidget {
 class _QuestionViewState extends State<QuestionView> {
   List<String> _availableAnswers = [_YUP, _NOPE];
 
-  _onAnswerChanged(bool answer) {
+  _onAnswerChanged(Answer answer) {
     setState(() {
       widget.question.answer = answer;
     });
@@ -55,17 +56,17 @@ class _QuestionViewState extends State<QuestionView> {
                       width: 250,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: _availableAnswers.length,
+                        itemCount: 2,
                         itemBuilder: (BuildContext context, int index) =>
                             Container(
                           height: 20,
                           width: 130,
                           child: RadioListTile(
                             title: Text(_availableAnswers[index]),
-                            value: _availableAnswers[index],
-                            groupValue: widget.question.answer ? _YUP : _NOPE,
-                            onChanged: (String answer) {
-                              _onAnswerChanged(answer == _YUP);
+                            value: index == 0 ? Answer.TRUE : Answer.FALSE,
+                            groupValue: widget.question.answer,
+                            onChanged: (Answer answer) {
+                              _onAnswerChanged(answer);
                             },
                           ),
                         ),

@@ -1,3 +1,4 @@
+import 'package:crucial_conversation_test/data/answer.dart';
 import 'package:crucial_conversation_test/data/question.dart';
 import 'package:crucial_conversation_test/data/category.dart';
 
@@ -16,7 +17,7 @@ class QuestionHelper {
       mainCategoryId: categoriesMap[SILENCE].id,
       subCategoryId: categoriesMap[WITHDRAWING].id,
       imagePath: "assets/images/gotta_run_q1.gif",
-      answer: false,
+      answer: Answer.NOT_ANSWERED,
     ),
     Question(
       id: 2,
@@ -25,7 +26,7 @@ class QuestionHelper {
       mainCategoryId: categoriesMap[SILENCE].id,
       subCategoryId: categoriesMap[WITHDRAWING].id,
       imagePath: "assets/images/destroy_phone.gif",
-      answer: false,
+      answer: Answer.NOT_ANSWERED,
     ),
   ];
 }

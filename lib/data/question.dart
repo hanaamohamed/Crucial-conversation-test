@@ -1,3 +1,4 @@
+import 'package:crucial_conversation_test/data/answer.dart';
 import 'package:flutter/foundation.dart';
 
 class Question {
@@ -6,7 +7,7 @@ class Question {
   final int mainCategoryId;
   final int subCategoryId;
   final String imagePath;
-  bool answer;
+  Answer answer;
 
   Question({
     @required this.id,
