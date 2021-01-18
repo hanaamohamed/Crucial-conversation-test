@@ -12,7 +12,7 @@ class Question {
   Question({
     @required this.id,
     @required this.questionTitle,
-    @required this.mainCategoryId,
+    this.mainCategoryId,
     @required this.subCategoryId,
     this.answer,
     this.imagePath,

@@ -42,8 +42,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/destroy_phone.gif
+    - assets/images/destroy_phone_q2.gif
     - assets/images/gotta_run_q1.gif
+    - assets/images/change_subbject_q3.gif
+    - assets/images/holding_back_q4.gif
+    - assets/images/inscinsere_compliment_q6.gif
+    - assets/images/saracasm_q5.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
