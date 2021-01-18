@@ -18,15 +18,12 @@ class _TestViewState extends State<TestView> {
 
   _answerCallback() {
     if (_questionIndex >= QuestionHelper.questions.length) return;
+    // todo
   }
 
-  bool _isThereMore() {
-    return _questionIndex < questions.length - 1;
-  }
+  bool get _isThereMore => _questionIndex < questions.length - 1;
 
-  bool _isTherePrev() {
-    return _questionIndex != 0;
-  }
+  bool get _isTherePrev => _questionIndex != 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,9 @@ class _TestViewState extends State<TestView> {
         Container(
           margin: EdgeInsets.all(10),
           child: questions[_questionIndex].imagePath != null
-              ? Image.asset(questions[_questionIndex].imagePath,)
+              ? Image.asset(
+                  questions[_questionIndex].imagePath,
+                )
               : Text(""),
         ),
         QuestionView(
@@ -53,7 +52,7 @@ class _TestViewState extends State<TestView> {
                 ),
                 color: Theme.of(context).primaryColor,
                 disabledColor: Colors.grey,
-                onPressed: _isTherePrev()
+                onPressed: _isTherePrev
                     ? () {
                         setState(() {
                           _questionIndex--;
@@ -68,7 +67,7 @@ class _TestViewState extends State<TestView> {
                 ),
                 color: Theme.of(context).primaryColor,
                 disabledColor: Colors.grey,
-                onPressed: _isThereMore()
+                onPressed: _isThereMore
                     ? () {
                         setState(() {
                           _questionIndex++;

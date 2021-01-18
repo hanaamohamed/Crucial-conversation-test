@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text("Crucial conversation test"),
         ),
-        body: Container(child: TestView()),
+        body: TestView(),
       ),
     );
   }
