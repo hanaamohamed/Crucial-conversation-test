@@ -32,7 +32,12 @@ class _TestViewState extends State<TestView> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-
+        Container(
+          margin: EdgeInsets.all(10),
+          child: questions[_questionIndex].imagePath != null
+              ? Image.asset(questions[_questionIndex].imagePath,)
+              : Text(""),
+        ),
         QuestionView(
             question: questions[_questionIndex],
             answerCallback: _answerCallback),

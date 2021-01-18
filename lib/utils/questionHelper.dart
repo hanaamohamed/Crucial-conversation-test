@@ -15,8 +15,8 @@ class QuestionHelper {
           "At times I avoid situations that might bring me into contact with people I'm having problems with.",
       mainCategoryId: categoriesMap[SILENCE].id,
       subCategoryId: categoriesMap[WITHDRAWING].id,
+      imagePath: "assets/images/gotta_run_q1.gif",
       answer: false,
-      imagePath: "assets/images/destroy_phone.gif"
     ),
     Question(
       id: 2,
@@ -24,6 +24,7 @@ class QuestionHelper {
           "I have to put off returning phone calls or e-mails because I simply didn't want to deal with the person who sent them.",
       mainCategoryId: categoriesMap[SILENCE].id,
       subCategoryId: categoriesMap[WITHDRAWING].id,
+      imagePath: "assets/images/destroy_phone.gif",
       answer: false,
     ),
   ];
