@@ -52,10 +52,11 @@ class _HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQuery = MediaQuery.of(context);
     return Container(
-        height: (MediaQuery.of(context).size.height -
+        height: (mediaQuery.size.height -
             _appBarHeight -
-            MediaQuery.of(context).padding.top),
+            mediaQuery.padding.top),
         width: MediaQuery.of(context).size.width,
         child: TestView());
   }
