@@ -30,9 +30,7 @@ class _TestViewState extends State<TestView> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-
-        Flexible(
-          fit: FlexFit.tight,
+        Expanded(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
             child: questions[_questionIndex].imagePath != null
@@ -43,22 +41,20 @@ class _TestViewState extends State<TestView> {
           ),
         ),
         Container(
-
           child: QuestionView(
               question: questions[_questionIndex],
               answerCallback: _answerCallback),
         ),
-        Flexible(
-          fit: FlexFit.tight,
+        Expanded(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               RaisedButton(
                 child: Text(
                   "PREV",
-                  style: TextStyle(color: Colors.white),
                 ),
                 color: Theme.of(context).primaryColor,
+                textColor: Theme.of(context).textTheme.button.color,
                 disabledColor: Colors.grey,
                 onPressed: _isTherePrev
                     ? () {
@@ -69,11 +65,9 @@ class _TestViewState extends State<TestView> {
                     : null,
               ),
               RaisedButton(
-                child: Text(
-                  "NEXT",
-                  style: TextStyle(color: Colors.white),
-                ),
+                child: Text("NEXT"),
                 color: Theme.of(context).primaryColor,
+                textColor: Theme.of(context).textTheme.button.color,
                 disabledColor: Colors.grey,
                 onPressed: _isThereMore
                     ? () {
