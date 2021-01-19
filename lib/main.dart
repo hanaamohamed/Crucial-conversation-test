@@ -13,6 +13,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    AppBar appBar = AppBar(
+      title: Text("Crucial conversation test"),
+    );
     return MaterialApp(
       theme: ThemeData(
         fontFamily: "Montserrat",
@@ -37,11 +40,23 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Crucial conversation test"),
-        ),
-        body: TestView(),
-      ),
+          appBar: appBar, body: _HomePage(appBar.preferredSize.height)),
     );
+  }
+}
+
+class _HomePage extends StatelessWidget {
+  final double _appBarHeight;
+
+  _HomePage(this._appBarHeight);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: (MediaQuery.of(context).size.height -
+            _appBarHeight -
+            MediaQuery.of(context).padding.top),
+        width: MediaQuery.of(context).size.width,
+        child: TestView());
   }
 }

@@ -27,60 +27,67 @@ class _TestViewState extends State<TestView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
-            child: questions[_questionIndex].imagePath != null
-                ? Image.asset(
-                    questions[_questionIndex].imagePath,
-                  )
-                : Text(""),
+    return LayoutBuilder(
+      builder: (ctx, constraints) => Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Container(
+            height: constraints.maxHeight * 0.35,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+              child: questions[_questionIndex].imagePath != null
+                  ? Image.asset(
+                      questions[_questionIndex].imagePath,
+                    )
+                  : Text(""),
+            ),
           ),
-        ),
-        Container(
-          child: QuestionView(
+          Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight * 0.25,
+            child: QuestionView(
               question: questions[_questionIndex],
-              answerCallback: _answerCallback),
-        ),
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              RaisedButton(
-                child: Text(
-                  "PREV",
-                ),
-                color: Theme.of(context).primaryColor,
-                textColor: Theme.of(context).textTheme.button.color,
-                disabledColor: Colors.grey,
-                onPressed: _isTherePrev
-                    ? () {
-                        setState(() {
-                          _questionIndex--;
-                        });
-                      }
-                    : null,
-              ),
-              RaisedButton(
-                child: Text("NEXT"),
-                color: Theme.of(context).primaryColor,
-                textColor: Theme.of(context).textTheme.button.color,
-                disabledColor: Colors.grey,
-                onPressed: _isThereMore
-                    ? () {
-                        setState(() {
-                          _questionIndex++;
-                        });
-                      }
-                    : null,
-              ),
-            ],
+              answerCallback: _answerCallback,
+            ),
           ),
-        )
-      ],
+          Container(
+            height: constraints.maxHeight * 0.2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text(
+                    "PREV",
+                  ),
+                  color: Theme.of(context).primaryColor,
+                  textColor: Theme.of(context).textTheme.button.color,
+                  disabledColor: Colors.grey,
+                  onPressed: _isTherePrev
+                      ? () {
+                          setState(() {
+                            _questionIndex--;
+                          });
+                        }
+                      : null,
+                ),
+                RaisedButton(
+                  child: Text("NEXT"),
+                  color: Theme.of(context).primaryColor,
+                  textColor: Theme.of(context).textTheme.button.color,
+                  disabledColor: Colors.grey,
+                  onPressed: _isThereMore
+                      ? () {
+                          setState(() {
+                            _questionIndex++;
+                          });
+                        }
+                      : null,
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
