@@ -28,20 +28,28 @@ class _TestViewState extends State<TestView> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        Container(
-          margin: EdgeInsets.all(10),
-          child: questions[_questionIndex].imagePath != null
-              ? Image.asset(
-                  questions[_questionIndex].imagePath,
-                )
-              : Text(""),
+
+        Flexible(
+          fit: FlexFit.tight,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+            child: questions[_questionIndex].imagePath != null
+                ? Image.asset(
+                    questions[_questionIndex].imagePath,
+                  )
+                : Text(""),
+          ),
         ),
-        QuestionView(
-            question: questions[_questionIndex],
-            answerCallback: _answerCallback),
         Container(
-          margin: EdgeInsets.only(top: 50),
+
+          child: QuestionView(
+              question: questions[_questionIndex],
+              answerCallback: _answerCallback),
+        ),
+        Flexible(
+          fit: FlexFit.tight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
