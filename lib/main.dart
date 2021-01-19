@@ -15,6 +15,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     AppBar appBar = AppBar(
       title: Text("Crucial conversation test"),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.chevron_right, color: Colors.white),
+          onPressed: () {
+            // Navigator.of(context).pop();
+          },
+        )
+      ],
     );
     return MaterialApp(
       theme: ThemeData(
@@ -54,9 +62,8 @@ class _HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     return Container(
-        height: (mediaQuery.size.height -
-            _appBarHeight -
-            mediaQuery.padding.top),
+        height:
+            (mediaQuery.size.height - _appBarHeight - mediaQuery.padding.top),
         width: MediaQuery.of(context).size.width,
         child: TestView());
   }

@@ -38,9 +38,11 @@ class _QuestionViewState extends State<QuestionView> {
       builder: (ctx, constraints) {
         return Card(
           shape: RoundedRectangleBorder(),
-          margin: EdgeInsets.only(left: 10, right: 10, top: 24),
+          margin: EdgeInsets.only(left: 10, right: 10),
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(
+              horizontal: 16.0,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -49,22 +51,24 @@ class _QuestionViewState extends State<QuestionView> {
                   style: Theme.of(context).textTheme.title,
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
                         height: constraints.maxHeight * 0.2,
-                        width: constraints.maxWidth * .6,
+                        width: constraints.maxWidth * .8,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 2,
                           itemBuilder: (BuildContext context, int index) =>
                               Container(
-                            height: 20,
-                            width: 130,
+                                height: constraints.maxHeight * 0.2,
+                                width: constraints.maxWidth * 0.4 ,
                             child: RadioListTile(
-                              title: Text(_availableAnswers[index]),
+                              title: Text(
+                                _availableAnswers[index],
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                               value: index == 0 ? Answer.TRUE : Answer.FALSE,
                               groupValue: widget.question.answer,
                               onChanged: (Answer answer) {

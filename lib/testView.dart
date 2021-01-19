@@ -56,9 +56,7 @@ class _TestViewState extends State<TestView> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 RaisedButton(
-                  child: Text(
-                    "PREV",
-                  ),
+                  child: Text("PREV"),
                   color: Theme.of(context).primaryColor,
                   textColor: Theme.of(context).textTheme.button.color,
                   disabledColor: Colors.grey,
