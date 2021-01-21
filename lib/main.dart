@@ -39,6 +39,12 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
         ),
+        buttonTheme: ButtonThemeData(
+            buttonColor: ThemeData.light().primaryColor,
+            textTheme: ButtonTextTheme.accent,
+            colorScheme:
+            Theme.of(context).colorScheme.copyWith(secondary: Colors.white)
+        ),
       ),
       home: Platform.isIOS
           ? CupertinoPageScaffold(

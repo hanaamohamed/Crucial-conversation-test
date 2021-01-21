@@ -1,3 +1,4 @@
+import 'package:crucial_conversation_test/crucial_button.dart';
 import 'package:crucial_conversation_test/questionView.dart';
 import 'package:crucial_conversation_test/utils/questionHelper.dart';
 import 'package:flutter/cupertino.dart';
@@ -55,11 +56,8 @@ class _TestViewState extends State<TestView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                RaisedButton(
-                  child: Text("PREV"),
-                  color: Theme.of(context).primaryColor,
-                  textColor: Theme.of(context).textTheme.button.color,
-                  disabledColor: Colors.grey,
+                CrucialButtonView(
+                  text: "PREV",
                   onPressed: _isTherePrev
                       ? () {
                           setState(() {
@@ -68,11 +66,8 @@ class _TestViewState extends State<TestView> {
                         }
                       : null,
                 ),
-                RaisedButton(
-                  child: Text("NEXT"),
-                  color: Theme.of(context).primaryColor,
-                  textColor: Theme.of(context).textTheme.button.color,
-                  disabledColor: Colors.grey,
+                CrucialButtonView(
+                  text: "NEXT",
                   onPressed: _isThereMore
                       ? () {
                           setState(() {
