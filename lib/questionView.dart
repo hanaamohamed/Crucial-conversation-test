@@ -40,7 +40,7 @@ class _QuestionViewState extends State<QuestionView> {
           shape: RoundedRectangleBorder(),
           margin: EdgeInsets.only(left: 10, right: 10),
           child: Padding(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
             ),
             child: Column(
