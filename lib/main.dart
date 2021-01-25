@@ -4,16 +4,11 @@ import 'package:crucial_conversation_test/testView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _MyAppState();
-  }
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     PreferredSizeWidget appBar = _appBar;
@@ -42,22 +37,26 @@ class _MyAppState extends State<MyApp> {
         buttonTheme: ButtonThemeData(
             buttonColor: ThemeData.light().primaryColor,
             textTheme: ButtonTextTheme.accent,
-            colorScheme:
-            Theme.of(context).colorScheme.copyWith(secondary: Colors.white)
-        ),
+            colorScheme: Theme.of(context)
+                .colorScheme
+                .copyWith(secondary: Colors.white)),
       ),
       home: Platform.isIOS
-          ? CupertinoPageScaffold(
-              navigationBar: appBar,
-              child: _HomePage(appBar.preferredSize.height),
-            )
-          : Scaffold(
-              appBar: appBar,
-              body: _HomePage(appBar.preferredSize.height),
-            ),
+          ? _buildIosHome(appBar)
+          : _buildAndroidHome(appBar),
     );
   }
 }
+
+Widget _buildIosHome(PreferredSizeWidget appBar) => CupertinoPageScaffold(
+    navigationBar: appBar,
+    child: HomePage(appBar.preferredSize.height),
+  );
+
+Widget _buildAndroidHome(PreferredSizeWidget appBar) => Scaffold(
+  appBar: appBar,
+  body: HomePage(appBar.preferredSize.height),
+);
 
 get _appBar => Platform.isIOS
     ? CupertinoNavigationBar(
@@ -66,22 +65,3 @@ get _appBar => Platform.isIOS
     : AppBar(
         title: Text("Crucial conversation test"),
       );
-
-class _HomePage extends StatelessWidget {
-  final double _appBarHeight;
-
-  _HomePage(this._appBarHeight);
-
-  @override
-  Widget build(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
-    return SafeArea(
-      child: Container(
-        height:
-            (mediaQuery.size.height - _appBarHeight - mediaQuery.padding.top),
-        width: MediaQuery.of(context).size.width,
-        child: TestView(),
-      ),
-    );
-  }
-}
