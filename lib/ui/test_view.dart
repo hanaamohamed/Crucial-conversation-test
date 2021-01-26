@@ -1,10 +1,10 @@
-import 'package:crucial_conversation_test/crucial_button.dart';
-import 'package:crucial_conversation_test/questionView.dart';
-import 'package:crucial_conversation_test/utils/questionHelper.dart';
+import 'package:crucial_conversation_test/ui/question_item.dart';
+import 'package:crucial_conversation_test/utils/question_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'data/question.dart';
+import '../data/question.dart';
+import 'crucial_button.dart';
 
 class TestView extends StatefulWidget {
   @override

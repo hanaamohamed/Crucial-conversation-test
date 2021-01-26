@@ -1,7 +1,7 @@
 import 'package:crucial_conversation_test/data/answer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './data/question.dart';
+import '../data/question.dart';
 
 const String _NOPE = "False";
 const String _YUP = "True";

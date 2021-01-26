@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:crucial_conversation_test/navigator.dart';
-import 'package:crucial_conversation_test/testView.dart';
+import 'package:crucial_conversation_test/ui/test_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

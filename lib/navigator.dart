@@ -1,8 +1,8 @@
-import 'package:crucial_conversation_test/home.dart';
+import 'package:crucial_conversation_test/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'history_screen.dart';
+import 'screens/history_screen.dart';
 
 class RouterPath {
   static const String HOME = "/";
