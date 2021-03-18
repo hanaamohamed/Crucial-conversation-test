@@ -83,7 +83,7 @@ class _TestViewState extends State<TestView> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 70.0),
+            margin: EdgeInsets.only(top: 50.0),
             child: FloatingActionButton.extended(
               label: Text("Jumb to results!"),
               onPressed: () {
@@ -91,10 +91,19 @@ class _TestViewState extends State<TestView> {
                   context,
                   RouterPath.RESULT,
                   arguments: {
-                    QUESTION_ARG: QuestionHelper.questions,
+                    QUESTION_ARG: questions,
                     RESULT_MODE: ResultScreenModes.CATEGORIES
                   },
                 );
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 16.0),
+            child: FloatingActionButton.extended(
+              label: Text("Resume later"),
+              onPressed: () {
+                // save progress.
               },
             ),
           )

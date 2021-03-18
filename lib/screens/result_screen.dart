@@ -27,8 +27,8 @@ class ResultScreen extends StatelessWidget {
         .modal;
     MediaQueryData mediaQuery = MediaQuery.of(context);
     AppBar appBar = AppBar(
-      title: const Text(
-        "Result",
+      title: Text(
+        resultScreenModes == ResultScreenModes.CATEGORIES ? "Categories": "Chapters",
       ),
     );
     double height = (mediaQuery.size.height -
