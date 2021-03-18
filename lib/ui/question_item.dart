@@ -62,8 +62,8 @@ class _QuestionViewState extends State<QuestionView> {
                           itemCount: 2,
                           itemBuilder: (BuildContext context, int index) =>
                               Container(
-                                height: constraints.maxHeight * 0.2,
-                                width: constraints.maxWidth * 0.4 ,
+                            height: constraints.maxHeight * 0.2,
+                            width: constraints.maxWidth * 0.4,
                             child: RadioListTile(
                               title: Text(
                                 _availableAnswers[index],

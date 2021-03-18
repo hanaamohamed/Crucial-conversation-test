@@ -1,11 +1,13 @@
+import 'package:crucial_conversation_test/data/answer.dart';
+import 'package:crucial_conversation_test/data/question.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ResultSuCategoryView extends StatelessWidget {
   final String title;
-  final List<int> questionNumbers;
+  final List<Question> questions;
 
-  ResultSuCategoryView({this.title, this.questionNumbers});
+  ResultSuCategoryView(this.title, this.questions);
 
   @override
   Widget build(BuildContext context) {
@@ -25,25 +27,25 @@ class ResultSuCategoryView extends StatelessWidget {
             title,
             style: Theme.of(context).textTheme.title,
           ),
-          ...questionNumbers
+          ...questions
               .map((question) => Row(
                     children: <Widget>[
                       Checkbox(
                         tristate: false,
-                        value: false,
+                        value: question.answer == Answer.TRUE,
                         onChanged: (bool newValue) {
                           // todo
                         },
                       ),
-                      Text("$question (T)"),
+                      Text("${question.id} (T)"),
                       Checkbox(
                         tristate: false,
-                        value: false,
+                        value: question.answer == Answer.FALSE,
                         onChanged: (bool newValue) {
                           // todo
                         },
                       ),
-                      Text("$question (F)")
+                      Text("${question.id} (F)")
                     ],
                   ))
               .toList()

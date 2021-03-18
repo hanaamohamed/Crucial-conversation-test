@@ -19,6 +19,24 @@ const String STATE_MY_PATH = "State my path";
 const String EXPLORE_OTHERS = "Explore others";
 const String MOVE_TO_ACTION = "Move to action";
 
+enum CategoryTypes {
+  SILENCE_CAT,
+  VIOLENCE_CAT,
+  MASKING_CAT,
+  AVOIDING_CAT,
+  WITHDRAWING_CAT,
+  CONTROLLING_CAT,
+  LABELING_CAT,
+  ATTACKING_CAT,
+  START_WITH_HEART_CHA,
+  LEARN_TO_LOOk_CHA,
+  MAKE_IT_SAFE_CHA,
+  STATE_MY_PATH_CHA,
+  MASTER_MY_STORIES_CHA,
+  EXPLORE_OTHERS_CHA,
+  MOVE_TO_ACTION_CHA,
+}
+
 class Category {
   final int id;
   final String title;

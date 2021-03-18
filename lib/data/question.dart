@@ -1,11 +1,12 @@
 import 'package:crucial_conversation_test/data/answer.dart';
+import 'package:crucial_conversation_test/data/category.dart';
 import 'package:flutter/foundation.dart';
 
 class Question {
   final int id;
   final String questionTitle;
-  final int mainCategoryId;
-  final int subCategoryId;
+  final CategoryTypes mainCategoryId;
+  final CategoryTypes subCategoryId;
   final String imagePath;
   Answer answer;
 

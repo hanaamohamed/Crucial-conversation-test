@@ -84,7 +84,6 @@ class _TestViewState extends State<TestView> {
           RaisedButton(
             child: Text("jumb to results!"),
             onPressed: () {
-
               Navigator.pushNamed(context, RouterPath.RESULT,
                   arguments: {QUESTION_ARG: questions},);
 
