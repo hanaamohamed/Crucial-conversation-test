@@ -1,3 +1,5 @@
+import 'package:crucial_conversation_test/navigator.dart';
+import 'package:crucial_conversation_test/screens/result_screen.dart';
 import 'package:crucial_conversation_test/ui/question_item.dart';
 import 'package:crucial_conversation_test/utils/question_helper.dart';
 import 'package:flutter/cupertino.dart';
@@ -78,6 +80,15 @@ class _TestViewState extends State<TestView> {
                 ),
               ],
             ),
+          ),
+          RaisedButton(
+            child: Text("jumb to results!"),
+            onPressed: () {
+
+              Navigator.pushNamed(context, RouterPath.RESULT,
+                  arguments: {QUESTION_ARG: questions},);
+
+            },
           )
         ],
       ),
