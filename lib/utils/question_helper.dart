@@ -4,21 +4,66 @@ import 'package:crucial_conversation_test/data/category.dart';
 
 class QuestionHelper {
   static Map<CategoryTypes, Category> categoriesMap = {
-    CategoryTypes.SILENCE_CAT: Category(id: 1, title: SILENCE),
-    CategoryTypes.VIOLENCE_CAT: Category(id: 2, title: VIOLENCE),
-    CategoryTypes.WITHDRAWING_CAT: Category(id: 3, title: WITHDRAWING),
-    CategoryTypes.AVOIDING_CAT: Category(id: 4, title: AVOIDING),
-    CategoryTypes.MASKING_CAT: Category(id: 5, title: MASKING),
-    CategoryTypes.CONTROLLING_CAT: Category(id: 6, title: CONTROLLING),
-    CategoryTypes.LABELING_CAT: Category(id: 7, title: LABELING),
-    CategoryTypes.ATTACKING_CAT: Category(id: 8, title: ATTACKING),
-    CategoryTypes.START_WITH_HEART_CHA: Category(id: 9, title: START_WITH_HEART),
-    CategoryTypes.LEARN_TO_LOOk_CHA: Category(id: 10, title: LEARN_TO_LOOK),
-    CategoryTypes.MAKE_IT_SAFE_CHA: Category(id: 11, title: MAKE_IT_SAFE),
-    CategoryTypes.MASTER_MY_STORIES_CHA: Category(id: 12, title: MASTER_MY_STORIES),
-    CategoryTypes.STATE_MY_PATH_CHA: Category(id: 13, title: STATE_MY_PATH),
-    CategoryTypes. EXPLORE_OTHERS_CHA: Category(id: 14, title: EXPLORE_OTHERS),
-    CategoryTypes.MOVE_TO_ACTION_CHA: Category(id: 15, title: MOVE_TO_ACTION),
+    CategoryTypes.SILENCE_CAT: Category(
+      id: CategoryTypes.SILENCE_CAT,
+      title: SILENCE,
+      isMainCategory: true,
+    ),
+    CategoryTypes.VIOLENCE_CAT: Category(
+      id: CategoryTypes.VIOLENCE_CAT,
+      title: VIOLENCE,
+      isMainCategory: true,
+    ),
+    CategoryTypes.WITHDRAWING_CAT: Category(
+      id: CategoryTypes.WITHDRAWING_CAT,
+      title: WITHDRAWING,
+    ),
+    CategoryTypes.AVOIDING_CAT: Category(
+      id: CategoryTypes.AVOIDING_CAT,
+      title: AVOIDING,
+    ),
+    CategoryTypes.MASKING_CAT: Category(
+      id: CategoryTypes.MASKING_CAT,
+      title: MASKING,
+    ),
+    CategoryTypes.CONTROLLING_CAT:
+        Category(id: CategoryTypes.CONTROLLING_CAT, title: CONTROLLING),
+    CategoryTypes.LABELING_CAT: Category(
+      id: CategoryTypes.LABELING_CAT,
+      title: LABELING,
+    ),
+    CategoryTypes.ATTACKING_CAT: Category(
+      id: CategoryTypes.ATTACKING_CAT,
+      title: ATTACKING,
+    ),
+    CategoryTypes.START_WITH_HEART_CHA: Category(
+      id: CategoryTypes.START_WITH_HEART_CHA,
+      title: START_WITH_HEART,
+    ),
+    CategoryTypes.LEARN_TO_LOOk_CHA: Category(
+      id: CategoryTypes.LEARN_TO_LOOk_CHA,
+      title: LEARN_TO_LOOK,
+    ),
+    CategoryTypes.MAKE_IT_SAFE_CHA: Category(
+      id: CategoryTypes.MAKE_IT_SAFE_CHA,
+      title: MAKE_IT_SAFE,
+    ),
+    CategoryTypes.MASTER_MY_STORIES_CHA: Category(
+      id: CategoryTypes.MASTER_MY_STORIES_CHA,
+      title: MASTER_MY_STORIES,
+    ),
+    CategoryTypes.STATE_MY_PATH_CHA: Category(
+      id: CategoryTypes.STATE_MY_PATH_CHA,
+      title: STATE_MY_PATH,
+    ),
+    CategoryTypes.EXPLORE_OTHERS_CHA: Category(
+      id: CategoryTypes.EXPLORE_OTHERS_CHA,
+      title: EXPLORE_OTHERS,
+    ),
+    CategoryTypes.MOVE_TO_ACTION_CHA: Category(
+      id: CategoryTypes.MOVE_TO_ACTION_CHA,
+      title: MOVE_TO_ACTION,
+    ),
   };
 
   static List<Question> questions = [

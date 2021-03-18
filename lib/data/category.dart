@@ -38,11 +38,13 @@ enum CategoryTypes {
 }
 
 class Category {
-  final int id;
+  final CategoryTypes id;
   final String title;
+  bool isMainCategory = false;
 
   Category({
     @required this.id,
     @required this.title,
+    this.isMainCategory = false,
   });
 }

@@ -40,19 +40,24 @@ class ResultScreen extends StatelessWidget {
   }
 
   Widget getCategoryList(
-      Map<CategoryTypes, List<Question>> answerModel, double height) {
-    var categoryKeys = QuestionHelper.categoriesMap.keys.toList();
+    Map<CategoryTypes, List<Question>> answerModel,
+    double height,
+  ) {
+    List<Category> mainCategories = new List();
+    QuestionHelper.categoriesMap.forEach((key, value) {
+      if (value.isMainCategory) {
+        mainCategories.add(value);
+      }
+    });
     return Container(
       child: ListView.builder(
-          itemCount: categoryKeys.length,
+          itemCount: mainCategories.length,
           itemBuilder: (ctx, index) {
-            var categoryKey = categoryKeys[index];
-            var categoryTitle = QuestionHelper.categoriesMap[categoryKey].title;
-            print(categoryKey);
+            print(mainCategories[index].title);
             return Column(children: <Widget>[
-              ResultMainCategoryHeader(title: categoryTitle),
+              ResultMainCategoryHeader(title: mainCategories[index].title),
               getSubcategoriesQuestionsListView(
-                  categoryKey, answerModel, height),
+                  mainCategories[index].id, answerModel, height),
             ]);
           }),
     );
@@ -63,24 +68,23 @@ class ResultScreen extends StatelessWidget {
     var questions = answerModel[categoryTypes];
     var subcategories =
         groupBy(questions, (Question question) => question.subCategoryId);
-    if (subcategories != null) {
-      return Container(
-        height: (height * 0.2) * subcategories.length,
-        child: ListView.builder(
-            itemCount: subcategories.length,
-            itemBuilder: (BuildContext context, int index) {
-              var subcategory = QuestionHelper
-                  .categoriesMap[subcategories.keys.toList()[index]];
-              var subcategoryTitle = subcategory.title;
-              var questionsPerSubcategory =
-                  subcategories[subcategories.keys.toList()[index]];
-              return ResultSuCategoryView(
-                subcategoryTitle,
-                questionsPerSubcategory,
-              );
-            }),
-      );
-    } else
-      return Text("NOT FOUND");
+    return Container(
+      height: (height * 0.17) * subcategories.length,
+      child: Column(
+        children: [
+          ...subcategories.keys.map((key) {
+            var subcategory = QuestionHelper
+                .categoriesMap[key];
+            var subcategoryTitle = subcategory.title;
+            var questionsPerSubcategory =
+                subcategories[key];
+            return ResultSuCategoryView(
+              subcategoryTitle,
+              questionsPerSubcategory,
+            );
+          }),
+        ],
+      ),
+    );
   }
 }
