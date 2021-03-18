@@ -16,16 +16,14 @@ class CrucialButtonView extends StatelessWidget {
         ? CupertinoButton(
             child: Text(
               text,
-              style: TextStyle(color: CupertinoColors.white),
             ),
             onPressed: onPressed,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).accentColor,
             disabledColor: Colors.grey,
           )
         : RaisedButton(
             child: Text(text),
-            color: Theme.of(context).primaryColor,
-            textColor: Theme.of(context).textTheme.button.color,
+            color: Theme.of(context).accentColor,
             disabledColor: Colors.grey,
             onPressed: onPressed,
           );

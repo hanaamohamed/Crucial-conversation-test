@@ -32,9 +32,9 @@ class _TestViewState extends State<TestView> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (ctx, constraints) => Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Container(
+            margin: EdgeInsets.only(top: 24.0),
             height: constraints.maxHeight * 0.35,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
@@ -46,6 +46,7 @@ class _TestViewState extends State<TestView> {
             ),
           ),
           Container(
+            margin: EdgeInsets.only(top: 16.0),
             width: constraints.maxWidth,
             height: constraints.maxHeight * 0.25,
             child: QuestionView(
@@ -54,7 +55,7 @@ class _TestViewState extends State<TestView> {
             ),
           ),
           Container(
-            height: constraints.maxHeight * 0.2,
+            margin: EdgeInsets.symmetric(vertical: 24.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -81,13 +82,21 @@ class _TestViewState extends State<TestView> {
               ],
             ),
           ),
-          RaisedButton(
-            child: Text("jumb to results!"),
-            onPressed: () {
-              Navigator.pushNamed(context, RouterPath.RESULT,
-                  arguments: {QUESTION_ARG: questions},);
-
-            },
+          Container(
+            margin: EdgeInsets.only(top: 70.0),
+            child: FloatingActionButton.extended(
+              label: Text("Jumb to results!"),
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  RouterPath.RESULT,
+                  arguments: {
+                    QUESTION_ARG: QuestionHelper.questions,
+                    RESULT_MODE: ResultScreenModes.CATEGORIES
+                  },
+                );
+              },
+            ),
           )
         ],
       ),

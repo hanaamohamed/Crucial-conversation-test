@@ -26,8 +26,10 @@ class QuestionHelper {
       id: CategoryTypes.MASKING_CAT,
       title: MASKING,
     ),
-    CategoryTypes.CONTROLLING_CAT:
-        Category(id: CategoryTypes.CONTROLLING_CAT, title: CONTROLLING),
+    CategoryTypes.CONTROLLING_CAT: Category(
+      id: CategoryTypes.CONTROLLING_CAT,
+      title: CONTROLLING,
+    ),
     CategoryTypes.LABELING_CAT: Category(
       id: CategoryTypes.LABELING_CAT,
       title: LABELING,
@@ -39,30 +41,37 @@ class QuestionHelper {
     CategoryTypes.START_WITH_HEART_CHA: Category(
       id: CategoryTypes.START_WITH_HEART_CHA,
       title: START_WITH_HEART,
+      isChapterCategory: true,
     ),
     CategoryTypes.LEARN_TO_LOOk_CHA: Category(
       id: CategoryTypes.LEARN_TO_LOOk_CHA,
       title: LEARN_TO_LOOK,
+      isChapterCategory: true,
     ),
     CategoryTypes.MAKE_IT_SAFE_CHA: Category(
       id: CategoryTypes.MAKE_IT_SAFE_CHA,
       title: MAKE_IT_SAFE,
+      isChapterCategory: true,
     ),
     CategoryTypes.MASTER_MY_STORIES_CHA: Category(
       id: CategoryTypes.MASTER_MY_STORIES_CHA,
       title: MASTER_MY_STORIES,
+      isChapterCategory: true,
     ),
     CategoryTypes.STATE_MY_PATH_CHA: Category(
       id: CategoryTypes.STATE_MY_PATH_CHA,
       title: STATE_MY_PATH,
+      isChapterCategory: true,
     ),
     CategoryTypes.EXPLORE_OTHERS_CHA: Category(
       id: CategoryTypes.EXPLORE_OTHERS_CHA,
       title: EXPLORE_OTHERS,
+      isChapterCategory: true,
     ),
     CategoryTypes.MOVE_TO_ACTION_CHA: Category(
       id: CategoryTypes.MOVE_TO_ACTION_CHA,
       title: MOVE_TO_ACTION,
+      isChapterCategory: true,
     ),
   };
 
