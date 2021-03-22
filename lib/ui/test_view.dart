@@ -41,6 +41,7 @@ class _TestViewState extends State<TestView> {
               child: questions[_questionIndex].imagePath != null
                   ? Image.asset(
                       questions[_questionIndex].imagePath,
+                      fit: BoxFit.cover,
                     )
                   : Text(""),
             ),

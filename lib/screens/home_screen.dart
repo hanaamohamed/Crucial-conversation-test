@@ -5,10 +5,19 @@ import 'package:crucial_conversation_test/ui/test_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Crucial_app_bar.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    PreferredSizeWidget appBar = _appBar(context);
+    PreferredSizeWidget appBar = CrucialAppBar(
+      "Crucial conversation test",
+      onIconTapped: () => AppNavigator.navigateTo(context, RouterPath.HISTORY),
+      icon: Icon(
+        CupertinoIcons.time,
+        color: Theme.of(context).primaryColor,
+      ),
+    );
     MediaQueryData mediaQuery = MediaQuery.of(context);
     Widget homeBody = SafeArea(
       child: Container(
@@ -36,29 +45,3 @@ Widget _buildAndroidHome(PreferredSizeWidget appBar, Widget homeBody) =>
       appBar: appBar,
       body: homeBody,
     );
-
-_appBar(BuildContext context) => Platform.isIOS
-    ? CupertinoNavigationBar(
-        middle: Text(
-          "Crucial conversation test",
-        ),
-        leading: GestureDetector(
-          child: Icon(
-            CupertinoIcons.time,
-            color: Theme.of(context).primaryColor,
-          ),
-          onTap: () => AppNavigator.navigateTo(context, RouterPath.HISTORY),
-        ),
-      )
-    : AppBar(
-        title: Text("Crucial conversation test"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.history,
-              color: Colors.white,
-            ),
-            onPressed: () => AppNavigator.navigateTo(context, RouterPath.HISTORY),
-          )
-        ],
-      );

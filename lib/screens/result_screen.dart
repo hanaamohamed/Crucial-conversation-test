@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:collection/collection.dart';
 import 'package:crucial_conversation_test/data/category.dart';
 import 'package:crucial_conversation_test/data/question.dart';
+import 'package:crucial_conversation_test/screens/Crucial_app_bar.dart';
 import 'package:crucial_conversation_test/ui/result_main_category_header.dart';
 import 'package:crucial_conversation_test/ui/result_sub_category_view.dart';
 import 'package:crucial_conversation_test/utils/correction_modal_genarator.dart';
@@ -28,21 +29,10 @@ class ResultScreen extends StatelessWidget {
             questions: questions, resultScreenModes: resultScreenModes)
         .modal;
     MediaQueryData mediaQuery = MediaQuery.of(context);
-    PreferredSizeWidget appBar = Platform.isIOS
-        ? CupertinoNavigationBar(
-            middle: Text(
-              resultScreenModes == ResultScreenModes.CATEGORIES
-                  ? "Categories"
-                  : "Chapters",
-            ),
-          )
-        : AppBar(
-            title: Text(
-              resultScreenModes == ResultScreenModes.CATEGORIES
-                  ? "Categories"
-                  : "Chapters",
-            ),
-          );
+    PreferredSizeWidget appBar = CrucialAppBar(
+        resultScreenModes == ResultScreenModes.CATEGORIES
+            ? "Categories"
+            : "Chapters");
     double height = (mediaQuery.size.height -
         appBar.preferredSize.height -
         mediaQuery.padding.top);
